@@ -59,3 +59,28 @@ nine.addEventListener('click', function(){
 zero.addEventListener('click', function(){
   display.value += 0;
 });
+
+
+add.addEventListener('click', function(){
+  display.value +='+';
+});
+
+subtract.addEventListener('click', function(){
+  display.value +='-';
+});
+
+multiply.addEventListener('click', function(){
+  display.value +='x';
+});
+
+divide.addEventListener('click', function(){
+  display.value +='/';
+});
+
+clear.addEventListener('click', function(){
+  display.value +='';
+});
+
+// calc.addEventListener('click', function(){
+//   display.value +='='
+// });
