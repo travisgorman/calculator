@@ -1,6 +1,6 @@
 // define variables
 // map variables onto all input buttons
-var display = document.querySelector('#display');
+var output = document.querySelector('#output');
 var zero = document.querySelector('#b0');
 var one = document.querySelector('#b1');
 var two = document.querySelector('#b2');
@@ -18,69 +18,130 @@ var divide = document.querySelector('#divide');
 var clear = document.querySelector('#clear');
 var calc = document.querySelector('#calc');
 
-// add event listeners
-// show a pre-defined value on the display value upon click
+//add event listeners
+// add a pre-defined value onto the output value upon click
+
 one.addEventListener('click', function(){
-  display.value += 1;
+  output.value += 1;
+  console.dir( one );
+
 });
 
 two.addEventListener('click', function(){
-  display.value += 2;
+  output.value += 2;
+  console.dir( two );
+
 });
 
 three.addEventListener('click', function(){
-  display.value += 3;
+  output.value += 3;
+  console.dir( three );
+
 });
 
 four.addEventListener('click', function(){
-  display.value += 4;
+  output.value += 4;
+  console.dir( four );
+
 });
 
 five.addEventListener('click', function(){
-  display.value += 5;
+  output.value += 5;
+  console.dir( five );
+
 });
 
 six.addEventListener('click', function(){
-  display.value += 6;
+  output.value += 6;
+  console.dir( six );
+
 });
 
 seven.addEventListener('click', function(){
-  display.value += 7;
+  output.value += 7;
+  console.dir( seven.value );
+
 });
 
 eight.addEventListener('click', function(){
-  display.value += 8;
+  output.value += 8;
+  console.dir( eight.attributes );
+
 });
 
 nine.addEventListener('click', function(){
-  display.value += 9;
+  output.value += 9;
+  console.dir( nine );
+
 });
 
 zero.addEventListener('click', function(){
-  display.value += 0;
+  output.value += 0;
+  console.dir( zero );
 });
 
-
 add.addEventListener('click', function(){
-  display.value +='+';
+  output.value +='+';
 });
 
 subtract.addEventListener('click', function(){
-  display.value +='-';
+  output.value +='-';
 });
 
 multiply.addEventListener('click', function(){
-  display.value +='x';
+  output.value +='x';
 });
 
 divide.addEventListener('click', function(){
-  display.value +='/';
+  output.value +='/';
 });
 
 clear.addEventListener('click', function(){
-  display.value +='';
+  output.value +='';
 });
 
+// on click, the `calc` key does math accordingly
+// and writes the calculation to the output
+
+
+var calculate = document.querySelector('#calc');
+
+calculate.addEventListener('click',function(){
+
+  var operation = output.innerText;
+  var num1 = operation[0];
+  var num2 = operation[2];
+  var operator = operation[1];
+  var total = '';
+
+  if (operator === '+'){
+    total = Number(num1) + Number(num2);
+    output.innerText = total;
+  }
+  else if (operator === '-'){
+    total = Number(num1) - Number(num2);
+    output.value = total;
+    output.innerText = total;
+ }
+  else if (operator === '*'){
+    total = Number(num1) * Number(num2);
+    output.value = total;
+    output.innerText = total;
+  }
+  else if (operator === '/'){
+    total = Number(num1) / Number(num2);
+    output.value = total;
+    output.innerText = total;
+  }
+});
 // calc.addEventListener('click', function(){
-//   display.value +='='
+//
+//   var
+//
+//
 // });
+// calc.addEventListener('click', function(){
+//   output.value +='='
+// });
+
+//
